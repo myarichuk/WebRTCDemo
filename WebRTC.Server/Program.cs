@@ -33,7 +33,8 @@ class Program
         {
             var pc = new RTCPeerConnection(null);
 
-            var audioSource = new FFmpegStreamSource(File.OpenRead("music.aac"),false, new AudioEncoder());//new FFmpegFileSource("music.aac", false, new AudioEncoder(), audioFrameSize: 480, useVideo: false);
+            var audioSource = new FFmpegStreamSource(File.OpenRead("music.aac"),false, new AudioEncoder());
+                //new FFmpegFileSource("music.aac", false, new AudioEncoder(), audioFrameSize: 480, useVideo: false);
             
             var audioTrack = new MediaStreamTrack(audioSource.GetAudioSourceFormats(), MediaStreamStatusEnum.SendOnly);
         
