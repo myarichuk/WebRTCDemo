@@ -17,6 +17,7 @@ class Program
             Console.WriteLine("Starting web socket server...");
 
             //note: this REQUIRES ffmpeg 4.4 shared codecs in the output folder (only 4.4 version!)
+            ffmpeg.RootPath = @"/usr/lib/x86_64-linux-gnu";
             FFmpegInit.Initialise(FfmpegLogLevelEnum.AV_LOG_VERBOSE, Environment.CurrentDirectory);
 
             var webSocketServer = new WebSocketServer(IPAddress.Any, WEBSOCKET_PORT);
